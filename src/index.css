@@ -1,0 +1,14 @@
+
+.nav-head{
+  width: 100%;
+    padding: 10px 0;
+    background: transparent;
+  }
+  .nav-item{
+    color: #000;
+    text-decoration: none;
+    padding: 0 20px;
+    margin: 0 5px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
