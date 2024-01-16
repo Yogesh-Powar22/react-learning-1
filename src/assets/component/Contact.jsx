@@ -24,13 +24,15 @@ const Contact = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data, e) => {
-    // console.log(data);
 
-    e.target.reset();
+  const onSubmit = (data) => {
+    console.log(data);
+
+    reset();
   };
 
   return (
@@ -47,9 +49,9 @@ const Contact = () => {
           {...register("email")}
         />
         <p className="required-msg"> {errors.email?.message} </p>
-        
+
         <label style={{ display: "block" }}> age: </label>
-        <input  placeholder="Enter age..." {...register("age")} />
+        <input placeholder="Enter age..." {...register("age")} />
         <p className="required-msg"> {errors.age?.message} </p>
         <label style={{ display: "block" }}> password: </label>
         <input
