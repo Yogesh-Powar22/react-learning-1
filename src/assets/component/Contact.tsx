@@ -2,6 +2,7 @@ import React from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import PropTypes from 'prop-types'
 
 const Contact = () => {
   const schema = yup.object().shape({
@@ -16,7 +17,7 @@ const Contact = () => {
     password: yup.string().min(4).max(20).required(),
     cpassword: yup
       .string()
-      .oneOf([yup.ref("password"), null])
+      .oneOf([yup.ref("password")])
       .required(),
   });
 
@@ -29,7 +30,7 @@ const Contact = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: any) => {
     console.log(data);
 
     reset();
@@ -76,3 +77,11 @@ const Contact = () => {
 };
 
 export default Contact;
+
+Contact.propTypes={
+  name: PropTypes.string,
+  email: PropTypes.string,
+  age: PropTypes.number,
+  password: PropTypes.any,
+  cpassword: PropTypes.any
+}

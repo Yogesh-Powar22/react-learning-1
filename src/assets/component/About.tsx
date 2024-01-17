@@ -1,15 +1,16 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import GlobalContext from "../context/GlobalContext";
+import { GlobalContext } from "../context/GlobalContext";
 
 const About = () => {
+
   const { setUserName, userName } = useContext(GlobalContext);
   // const { userName } = useContext(GlobalContext);
 
   const [newUserName, setNewUserName] = useState("");
   let navigate = useNavigate();
 
-  const changeUserName = (e) => {
+  const changeUserName = (e: any) => {
     setNewUserName(e.target.value);
   };
 

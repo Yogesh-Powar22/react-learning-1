@@ -5,16 +5,16 @@ import Navbar from "./assets/component/Navbar";
 import Contact from "./assets/component/Contact";
 import Home from "./assets/component/Home";
 import ErrorPage from "./assets/component/ErrorPage";
-import GlobalContext from "./assets/context/GlobalContext";
+import {GlobalContextProvider} from "./assets/context/GlobalContext";
 import { useState } from "react";
 
 function App() {
-  const [userName, setUserName] = useState("yogesh");
+  // const [userName, setUserName] = useState<any>("yogesh");
 
   return (
     <>
       <div>
-        <GlobalContext.Provider value={{ userName, setUserName }}>
+        <GlobalContextProvider>
           <BrowserRouter>
             <Navbar />
             <Routes>
@@ -24,7 +24,7 @@ function App() {
               <Route path="*" element={<ErrorPage />} />
             </Routes>
           </BrowserRouter>
-        </GlobalContext.Provider>
+        </GlobalContextProvider>
       </div>
     </>
   );
