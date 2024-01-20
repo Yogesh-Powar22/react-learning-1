@@ -37,48 +37,50 @@ const Contact = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label style={{ display: "block" }}> name: </label>
-        <input type="text" placeholder="Enter name..." {...register("name")} />
-        <p className="required-msg"> {errors.name?.message} </p>
+    <div className="container">
+      <div className="row">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <label style={{ display: "block" }}> name: </label>
+          <input type="text" placeholder="Enter name..." {...register("name")} />
+          <p className="required-msg"> {errors.name?.message} </p>
 
-        <label style={{ display: "block" }}> email: </label>
-        <input
-          type="text"
-          placeholder="Enter email..."
-          {...register("email")}
-        />
-        <p className="required-msg"> {errors.email?.message} </p>
+          <label style={{ display: "block" }}> email: </label>
+          <input
+            type="text"
+            placeholder="Enter email..."
+            {...register("email")}
+          />
+          <p className="required-msg"> {errors.email?.message} </p>
 
-        <label style={{ display: "block" }}> age: </label>
-        <input placeholder="Enter age..." {...register("age")} />
-        <p className="required-msg"> {errors.age?.message} </p>
-        <label style={{ display: "block" }}> password: </label>
-        <input
-          type="password"
-          placeholder="Enter password..."
-          {...register("password")}
-        />
-        <p className="required-msg"> {errors.password?.message} </p>
+          <label style={{ display: "block" }}> age: </label>
+          <input placeholder="Enter age..." {...register("age")} />
+          <p className="required-msg"> {errors.age?.message} </p>
+          <label style={{ display: "block" }}> password: </label>
+          <input
+            type="password"
+            placeholder="Enter password..."
+            {...register("password")}
+          />
+          <p className="required-msg"> {errors.password?.message} </p>
 
-        <label style={{ display: "block" }}> confirm password: </label>
-        <input
-          type="password"
-          placeholder="confirm password..."
-          {...register("cpassword")}
-        />
-        <p className="required-msg"> {errors.cpassword?.message} </p>
+          <label style={{ display: "block" }}> confirm password: </label>
+          <input
+            type="password"
+            placeholder="confirm password..."
+            {...register("cpassword")}
+          />
+          <p className="required-msg"> {errors.cpassword?.message} </p>
 
-        <input style={{ padding: "8px 30px" }} type="submit" />
-      </form>
+          <input style={{ padding: "8px 30px" }} type="submit" />
+        </form>
+      </div>
     </div>
   );
 };
 
 export default Contact;
 
-Contact.propTypes={
+Contact.propTypes = {
   name: PropTypes.string,
   email: PropTypes.string,
   age: PropTypes.number,
