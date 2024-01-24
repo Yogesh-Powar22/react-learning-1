@@ -6,7 +6,6 @@ import Contact from "./assets/component/Contact";
 import Home from "./assets/component/Home";
 import ErrorPage from "./assets/component/ErrorPage";
 import {GlobalContextProvider} from "./assets/context/GlobalContext";
-import { useState } from "react";
 
 function App() {
   // const [userName, setUserName] = useState<any>("yogesh");

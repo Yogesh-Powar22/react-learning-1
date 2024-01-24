@@ -23,43 +23,31 @@ const About = () => {
     // console.log("setUserName>>>>>>>>" + setUserName);
   };
   return (
-    <div>
-       <button
+    <div className="container">
+      <input className="bg-secondary text-light float-end" style={{ fontSize: '13px', padding: "8px 15px" }} type="button"
         onClick={() => {
           navigate("/");
         }}
-      >
-        go to Home
-      </button>
+        value="go to Home"
+      />
+
       <h2> Hello {userName}</h2>
 
-      <input onChange={changeUserName} />
+      <input onChange={changeUserName} placeholder="Change User Name..." />
       <br />
-      <button onClick={updateUserName}>change user</button>
+      {newUserName &&
+        <div>
+          <button onClick={updateUserName}>change user</button>
 
-      <p>
-        {newUserName} <br />
-      </p>
-      <button onClick={toggle}>
-        {isVisible ? 'hide' : 'show'}
-      </button>
-      {isVisible &&
-        <p>
-          If you are still facing issues, you may need to simplify your styling
-          and stick to widely supported practices. Unfortunately, due to the
-          limitations of email clients, achieving consistent styling can be
-          challenging. Always refer to the specific documentation or support
-          resources of the email clients you are targeting for the most accurate
-          information on their CSS support. you are still facing issues, you may
-          need to simplify your styling and stick to widely supported practices.
-          Unfortunately, due to the limitations of email clients, achieving
-          consistent styling can be challenging. Always refer to the specific
-          documentation or support resources of the email clients you are
-          targeting for the most accurate information on their CSS support.
-        </p>
+          <p>
+            {newUserName} <br />
+          </p>
+        </div>
       }
 
-     
+
+
+
     </div>
   );
 };
